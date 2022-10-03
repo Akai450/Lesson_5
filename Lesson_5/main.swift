@@ -1,16 +1,16 @@
 import Foundation
-//
-////Массивы, Словари, Set и работа с ними, foreach
-//let array: [Int] = [1, 2, 3, 4, 5]
-//for num in array {
-//    print (num)
-//}
-//
-//let arrayString: [String] = [",", " ", "/", "*"]
-//for sign in arrayString {
-//    print (sign)
-//}
-//
+
+//Массивы, Словари, Set и работа с ними, foreach
+let array: [Int] = [1, 2, 3, 4, 5]
+for num in array {
+    print (num)
+}
+
+let arrayString: [String] = [",", " ", "/", "*"]
+for sign in arrayString {
+    print (sign)
+}
+
 var clothesArray: [String] = ["Кофта", "Штаны", "Футболка", "Кепка"]
 var costArray: [Int] = [500, 1000, 300, 200]
 //метод добавления элемента в массив
@@ -41,36 +41,36 @@ for (index, item) in clothesArray.enumerated() {
 ////print (name)
 ////print (nameReversed)
 //
-////Вариант 2
-//print ("Введите слово")
-//let readline = readLine()!
-//var array1: [String] = [""]
-//var array2: [String] = [""]
-//
-//array1.remove(at: 0)
-//array2.remove(at: 0)
-//
-//for i in readline {
-//    array1.append(String(i))
-//    array2.insert(String(i), at: 0)
-//}
-//
-//print (array1)
-//print (array2)
-//
-//var car = "Toyota"
-//var carSymbol: [Character] = []
-//for (index, item) in car.enumerated() {
-//    carSymbol.insert(item, at: index + index)
-//}
-//print (carSymbol)
-//
-////Двухмерный массив
-////Массив в массиве
-//let arrayA: [String] = ["Anna", "Anton", "Aibek"]
-//let arrayB: [String] = ["Bakai", "Bektur", "Benazir"]
-//let arrayC: [String] = ["Chyngyz", "Cholpon", "Chynara"]
-//let generalArray: [[String]] = [arrayA, arrayB, arrayC]
-//print (generalArray[2][1])
+//Вариант 2
+print ("Введите слово")
+let readline = readLine()!
+var array1: [String] = [""]
+var array2: [String] = [""]
+
+array1.remove(at: 0)
+array2.remove(at: 0)
+
+for i in readline {
+    array1.append(String(i))
+    array2.insert(String(i), at: 0)
+}
+
+print (array1)
+print (array2)
+
+var car = "Toyota"
+var carSymbol: [Character] = []
+for (index, item) in car.enumerated() {
+    carSymbol.insert(item, at: index + index)
+}
+print (carSymbol)
+
+//Двухмерный массив
+//Массив в массиве
+let arrayA: [String] = ["Anna", "Anton", "Aibek"]
+let arrayB: [String] = ["Bakai", "Bektur", "Benazir"]
+let arrayC: [String] = ["Chyngyz", "Cholpon", "Chynara"]
+let generalArray: [[String]] = [arrayA, arrayB, arrayC]
+print (generalArray[2][1])
 
 

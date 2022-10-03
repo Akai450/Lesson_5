@@ -17,6 +17,7 @@ print (words)
 print ("Конец")
 
 //№2. Составить список из 20 контактов (Имя - номер телефона). Отсортировать по алфавиту (А-Я) и отобразить на какую букву сколько контактов сохранено
+//Вариант 1
 var names = ["Aisuluu", "Aigerim", "Akbermet", "Aizirek", "Aida", "Aidai", "Aiym", "Ainazik", "Akmaral", "Aizada", "Zharkyn", "Zhibek", "Zhanyl", "Zhyldyz", "Saikal", "Kanyshai", "Medina", "Nazik", "Meerim", "Sanirabiga"]
 
 var phoneNumbers = ["+996555000000", "+996500010101", "+996505996699", "+996700101010", "+996709090909", "+996557707070", "+996707666999", "+996555555333", "+996556887788", "+996700233445", "+996502474747", "+996999999999", "+996500434343", "+996555123123", "+996222022022", "+996705555555", "+996708655665", "+996556669996", "+996772223322", "+996770170717"]
@@ -42,6 +43,64 @@ print ("Количество контактов на S - \(s.count)\nСписо�
 var z: [String] = names.filter{$0.hasPrefix("Z")}
 print ("Количество контактов на Z - \(z.count)\nСписок контактов - \(z)")
 
+
+//Вариант 2
+var totalArray: [[String]] = []
+
+func addToArray(name: String, num: String){
+    var found = false
+    var array: [String] = []
+    var array2: [String] = []
+    let first = name.first!
+    for (index, item) in totalArray.enumerated(){
+        for (index2, item2) in item.enumerated(){
+            for item3 in item2{
+                if item3 == first && index2 == 0 && found == false{
+                    totalArray[index].append(name)
+                    totalArray[index].append(num)
+                    found = true
+                    break
+                }
+            }
+        }
+    }
+    
+    if found == false{
+        
+        array.append(String(first))
+        array.append(name)
+        array.append(num)
+        totalArray.append(array)
+    }
+}
+
+
+
+addToArray(name: "Aisuluu", num: "+996555000000")
+addToArray(name: "Aigerim", num: "+996500010101")
+addToArray(name: "Akbermet", num: "+996505996699")
+addToArray(name: "Aizirek", num: "+996700101010")
+addToArray(name: "Aida", num: "+996709090909")
+addToArray(name: "Aidai", num: "+996557707070")
+addToArray(name: "Aiym", num: "+996707666999")
+addToArray(name: "Ainazik", num: "+996555555333")
+addToArray(name: "Akmaral", num: "+996556887788")
+addToArray(name: "Aizada", num: "+996700233445")
+addToArray(name: "Zharkyn", num: "+996502474747")
+addToArray(name: "Zhibek", num: "+996999999999")
+addToArray(name: "Zhanyl", num: "+996500434343")
+addToArray(name: "Zhyldyz", num: "+996555123123")
+addToArray(name: "Saikal", num: "+996222022022")
+addToArray(name: "Kanyshai", num: "+996705555555")
+addToArray(name: "Medina", num: "+996708655665")
+addToArray(name: "Nazik", num: "+996556669996")
+addToArray(name: "Meerim", num: "+996772223322")
+addToArray(name: "Sanirabiga", num: "+996770170717")
+
+print(totalArray.sorted(by: { $0.first! < $1.first! }))
+for i in totalArray{
+    print("Буква \(i.first!). Количество контактов: \(i.count - i.count/2 - 1)")
+}
 
 /*№3. Составить мини-игру “Викторина” используя массивы для записи вопросов и ответов
 В игре должно быть 5 раундов по 3 вопроса
